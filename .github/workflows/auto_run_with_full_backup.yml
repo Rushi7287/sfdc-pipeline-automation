@@ -4,8 +4,8 @@ name: Auto Run With Full Backup
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 3 * * 1-5"
+  # schedule:
+    # - cron: "0 3 * * 1-5"
 
 permissions: write-all
 
