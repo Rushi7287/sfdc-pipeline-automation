@@ -32,4 +32,4 @@ jobs:
           sf project retrieve start -x ./backup-package.xml
           git add -A
           git commit -m "Full-Backup"
-          git push https://github.com/Rushi7287/SFDC_CI_CD_ORG_7287.git
+          git push https://github.com/Rushi7287/sfdc-pipeline-automation.git
