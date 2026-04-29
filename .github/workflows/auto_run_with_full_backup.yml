@@ -1,0 +1,35 @@
+# auto_run_with_full_backup Workflow :
+
+name: Auto Run With Full Backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1-5"
+
+permissions: write-all
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Salesforce CLI
+        shell: bash
+        run: |
+          npm install -g @salesforce/cli
+          sf --version
+      - name: Login to Environment
+        shell: bash
+        run: |
+          sf org login sfdx-url --set-default --sfdx-url-file <(echo "${{ secrets.SFDX_INTEGRATION_URL }}")
+      - name: Retrive From Org And Push to GIT
+        shell: bash
+        run: |
+          git checkout main
+          git config --global user.email "rushikesh.kale3@bajajfinserv.in"
+          git config --global user.name "Azure DevOps"
+          sf project retrieve start -x ./backup-package.xml
+          git add -A
+          git commit -m "Full-Backup"
+          git push https://github.com/Rushi7287/SFDC_CI_CD_ORG_7287.git

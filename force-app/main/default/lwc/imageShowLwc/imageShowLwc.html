@@ -1,0 +1,96 @@
+<template>
+    <div class="app-container">
+        <nav class="glass-nav">
+            <template for:each={navItems} for:item="nav">
+                <button key={nav.id} class="nav-btn" onclick={handleScroll} data-target={nav.id}>
+                    {nav.label}
+                </button>
+            </template>
+        </nav>
+
+        <main class="scroll-container">
+            <section class="page-section" data-id="education">
+                <h2 class="section-header">01. Education</h2>
+                <div class="z-layout">
+                    <div class="z-row">
+                        <div class="z-content"><h3>Post Graduation</h3><p>Details about your PG studies and specialization.</p></div>
+                        <div class="z-image"><div class="img-placeholder"><img src={profileUrl} alt="Edu 1"></div></div>
+                    </div>
+                    <div class="z-row reverse">
+                        <div class="z-content"><h3>Graduation</h3><p>Details about your Bachelor's degree and honors.</p></div>
+                        <div class="z-image"><div class="img-placeholder"><img src={profileUrl} alt="Edu 2"></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section" data-id="experience">
+                <h2 class="section-header">02. Experience</h2>
+                <div class="glass-card full-width">
+                    <div class="exp-header">
+                        <h3>Senior Software Engineer</h3>
+                        <span class="badge">Bajaj Finserv Ltd.</span>
+                    </div>
+                    <p class="date-range">Nov 2022 — Oct 2025</p>
+                    <ul class="clean-list">
+                        <li>Developed and optimized high-performance LWC components.</li>
+                        <li>Migrated legacy Aura components to modern LWC standards.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="page-section" data-id="projects">
+                <h2 class="section-header">03. Projects</h2>
+                <div class="project-grid">
+                    <div class="glass-card project-card">
+                        <img src={profileUrl} class="proj-img" alt="Project">
+                        <div class="proj-body">
+                            <h3>Salesforce Portfolio</h3>
+                            <p>An LWC-based glassmorphic portfolio application.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section" data-id="certificates">
+                <h2 class="section-header">04. Certificates</h2>
+                <div class="logo-grid">
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                    <div class="logo-item"><img src={profileUrl} alt="Cert"></div>
+                </div>
+            </section>
+
+            <section class="page-section" data-id="awards">
+                <h2 class="section-header">05. Awards</h2>
+                <div class="z-layout">
+                    <div class="z-row">
+                        <div class="z-content"><h3>Employee of the Quarter</h3><p>Awarded for excellence in delivery.</p></div>
+                        <div class="z-image"><div class="img-placeholder"><img src={profileUrl} alt="Award"></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-section" data-id="learning">
+                <h2 class="section-header">06. Learning</h2>
+                <div class="glass-card tab-container">
+                    <div class="tab-bar">
+                        <button class="active-tab">Apex</button>
+                        <button>LWC</button>
+                        <button>Flows</button>
+                    </div>
+                    <div class="tab-content"><p>Deep diving into asynchronous Apex and Design Patterns.</p></div>
+                </div>
+            </section>
+
+            <section class="page-section contact-page" data-id="contact">
+                <div class="glass-card contact-cta">
+                    <h2>Ready to collaborate?</h2>
+                    <button class="primary-btn">Contact Me</button>
+                </div>
+            </section>
+        </main>
+    </div>
+</template>

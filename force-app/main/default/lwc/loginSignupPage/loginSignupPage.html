@@ -1,0 +1,48 @@
+<template>
+  <!-- <div class="min-h-screen flex items-center justify-center p-6">
+    <div class="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded shadow">
+      <template if:true={mode==='login'}>
+        <h2 class="text-2xl font-semibold mb-3">Sign in</h2>
+        <input placeholder="Username" class="w-full mb-2 p-2 border" onchange={e => this.loginUsername = e.target.value} />
+        <input type="password" placeholder="Password" class="w-full mb-2 p-2 border" onchange={e => this.loginPassword = e.target.value} />
+        <div class="flex gap-2">
+          <button class="px-4 py-2 rounded bg-indigo-600 text-white" onclick={handleLogin}>Login</button>
+          <button class="px-4 py-2 rounded border" onclick={() => this.mode='register'}>Register</button>
+        </div>
+        <div class="mt-3"><a href="javascript:void(0)" onclick={() => this.mode='forgot'}>Forgot Password?</a></div>
+      </template>
+
+      <template if:true={mode==='register'}>
+        <h2 class="text-2xl font-semibold mb-3">Register</h2>
+        <input placeholder="Username" class="w-full mb-2 p-2 border" onchange={e => this.regUsername = e.target.value} />
+        <input placeholder="Email" class="w-full mb-2 p-2 border" onchange={e => this.regEmail = e.target.value} />
+        <input type="password" placeholder="Password" class="w-full mb-2 p-2 border" onchange={e => this.regPassword = e.target.value} />
+        <input type="password" placeholder="Re-enter Password" class="w-full mb-2 p-2 border" onchange={e => this.regRePassword = e.target.value} />
+        <div class="flex gap-2">
+          <button class="px-4 py-2 rounded bg-indigo-600 text-white" onclick={handleRegister}>Create</button>
+          <button class="px-4 py-2 rounded border" onclick={() => this.mode='login'}>Back</button>
+        </div>
+      </template>
+
+      <template if:true={mode==='forgot'}>
+        <h2 class="text-2xl font-semibold mb-3">Forgot Password</h2>
+        <input placeholder="Username or Email" class="w-full mb-2 p-2 border" onchange={e => this.otpUsernameOrEmail = e.target.value} />
+        <div class="flex gap-2">
+          <button class="px-4 py-2 rounded bg-indigo-600 text-white" onclick={handleSendOtp}>Send OTP</button>
+          <button class="px-4 py-2 rounded border" onclick={() => this.mode='login'}>Back</button>
+        </div>
+      </template>
+
+      <template if:true={mode==='reset'}>
+        <h2 class="text-2xl font-semibold mb-3">Reset Password</h2>
+        <input placeholder="Enter OTP" class="w-full mb-2 p-2 border" onchange={e => this.otpValue = e.target.value} />
+        <input type="password" placeholder="New Password" class="w-full mb-2 p-2 border" onchange={e => this.newPassword = e.target.value} />
+        <input type="password" placeholder="Re-enter New Password" class="w-full mb-2 p-2 border" onchange={e => this.newRePassword = e.target.value} />
+        <div class="flex gap-2">
+          <button class="px-4 py-2 rounded bg-indigo-600 text-white" onclick={handleResetPass}>Reset</button>
+          <button class="px-4 py-2 rounded border" onclick={() => this.mode='login'}>Back</button>
+        </div>
+      </template>
+    </div>
+  </div> -->
+</template>

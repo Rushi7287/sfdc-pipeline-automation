@@ -1,0 +1,59 @@
+<template>
+    <div class="todo-container">
+        <div class="sidebar">
+            <h3>Your Lists</h3>
+            <template for:each={lists} for:item="list">
+                <div key={list.Id}
+                     class="list-item"
+                     data-id={list.Id}
+                     onclick={handleListSelect}>
+                    {list.Name}
+                </div>
+            </template>
+            <div class="new-list">
+                <input type="text"
+                       placeholder="New list name..."
+                       value={newListName}
+                       onchange={handleNewListChange} />
+                <button onclick={createNewList}>Add List</button>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <template if:true={selectedListId}>
+                <h2>{selectedListName}</h2>
+
+                <div class="new-task">
+                    <input type="text"
+                           placeholder="New task..."
+                           value={newTaskName}
+                           onchange={handleNewTaskChange} />
+                    <button onclick={addTask}>Add</button>
+                </div>
+
+                <template if:true={tasks.length}>
+                    <template for:each={tasks} for:item="task">
+                        <div class="task-item" key={task.Id}>
+                            <input type="checkbox"
+                                   checked={task.Is_Completed__c}
+                                   data-id={task.Id}
+                                   onchange={toggleTaskCompletion} />
+                            
+                                {task.Name}
+                            
+                            <small if:true={task.Due_Date__c}>
+                                &nbsp;| Due: {task.Due_Date__c}
+                            </small>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={tasks.length}>
+                    <p>No tasks yet!</p>
+                </template>
+            </template>
+            <template if:false={selectedListId}>
+                <p>Select or create a list to begin.</p>
+            </template>
+        </div>
+    </div>
+</template>

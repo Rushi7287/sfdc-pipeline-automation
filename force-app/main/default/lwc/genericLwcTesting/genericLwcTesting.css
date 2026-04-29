@@ -1,0 +1,344 @@
+@font-face {
+    font-family: 'Preahvihear';
+    src: url('/sfsites/c/resource/Preahvihear') format('truetype');
+}
+
+[draggable="true"] {
+    cursor: move;
+}
+
+:host {
+    --font-main: 'Preahvihear', sans-serif;
+    font-family: var(--font-main);
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-main: #2d3436;
+    --accent-color: #00a1e0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.egg-wrapper {
+    width: 250px;
+    height: 300px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.developer-img {
+    width: 99%;
+    height: auto;
+    object-fit: contain;
+}
+
+.developer-img:hover {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.background-container {
+    width: 100%;
+    height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.backCont {
+    height: 900vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(0, 0, 255, 0.1), rgba(249, 1, 1, 0.1), rgba(0, 174, 255,  0.1), rgba(255, 166, 0,  0.1), rgba(2, 249, 2,  0.1), rgba(255, 255, 0,  0.1)); */
+    background-image: linear-gradient(rgba(0, 0, 255, 0.070), rgba(249, 1, 43, 0.070), rgba(0, 174, 255, 0.070), rgba(255, 166, 0, 0.070), rgba(2, 249, 2, 0.070), rgba(255, 255, 0, 0.070));
+}
+
+.glass-card {
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    /* -webkit-backdrop-filter: blur(12px); */
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    text-align: center;
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05); */
+    box-shadow: 0px 0px 10px #91919124;
+    margin: 10px 10px;
+    border-radius: 10px;
+}
+
+.glass-card:hover {
+    box-shadow: 5px 5px 25px #91919144;
+    border-radius: 0px;
+    /* padding: 1px 10px; */
+}
+
+.glass-card-main {
+    backdrop-filter: blur(12px);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    /* margin: 10px; */
+    /* border-radius: 2px; */
+}
+
+.greeting {
+    color: #002565;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 1.8rem;
+    /* color: var(--text-main); */
+    margin: 0;
+}
+
+.role {
+    font-size: 2.4rem;
+    color: #636e72;
+    margin: 15px 0;
+}
+
+.role span {
+    font-weight: 800;
+    color: #9c3374;
+}
+
+.description {
+    color: #002565;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 20px auto 0;
+}
+
+.item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .glass-card {
+        max-width: 95%;
+        border-radius: 10px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .name {
+        font-size: 1.4rem;
+        /* color: var(--text-main); */
+        margin: 0;
+    }
+
+    .role {
+        font-size: 2.0rem;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1px;
+    }
+
+    .glass-card {
+        border-radius: 10px;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .greeting {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .egg-wrapper {
+        width: 180px;
+        height: 250px;
+    }
+}
+
+.page-section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-header::after {
+    content: "";
+    height: 1px;
+    width: 300px;
+    background: var(--glass-border);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: slideUp 0.9s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-left {
+    opacity: 0;
+    animation: fadeLeftIn 0.9s ease-out forwards;
+
+}
+
+@keyframes fadeLeftIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.full-page-container {
+    /* Ensures the container covers the full viewport height */
+    min-height: 100vh;
+    width: 100%;
+
+    /* Background properties for a clean look */
+    background-size: cover;
+    /* Scales image to fill container */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Keeps background still during scroll */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.watermark-wrapper {
+    pointer-events: none;
+    /* Allows clicking on content behind watermarks */
+    user-select: none;
+    /* Prevents text highlighting */
+}
+
+.watermark {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0.4;
+    /* Watermark transparency */
+}
+
+/* TOP RIGHT SECTION */
+.top-right {
+    top: 75px;
+    right: 10px;
+}
+
+/* BOTTOM LEFT SECTION */
+.bottom-left {
+    bottom: 0px;
+    left: 10px;
+}
+
+/* Vertical Text Logic */
+.namewater {
+    writing-mode: vertical-rl;
+    /* Rotates text vertically */
+    text-orientation: mixed;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #333;
+    padding: 15px 0;
+}
+
+/* The Vertical Line */
+.line {
+    width: 1px;
+    height: 100px;
+    /* Adjust length of the line here */
+    background-color: #333;
+}
+
+/* Responsive: Hide or adjust for mobile */
+@media (max-width: 768px) {
+    .line {
+        height: 50px;
+    }
+
+    .namewater {
+        font-size: 10px;
+    }
+
+    .top-right {
+        right: 5px;
+    }
+
+    /* BOTTOM LEFT SECTION */
+    .bottom-left {
+        left: 5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+    .top-right {
+        top: 170px;
+    }
+}
